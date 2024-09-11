@@ -26,6 +26,16 @@ Test Scenarios in Postman
         }
  Expected Response: 400 Bad Request + message
 
+ → Create Actor without First Name:
+ Method: POST
+ URL: http://localhost:3000/actors
+ Body: 
+        {
+            "firstName": "Hanks",
+            "dateOfBirth": "1956-07-09"
+        }
+ Expected Response: 400 Bad Request + message
+
 → Get All Actors
  Method: GET
  URL: http://localhost:3000/actors
@@ -125,7 +135,7 @@ Test Scenarios in Postman
  URL: http://localhost:3000/movies/999
  Expected Response: 404 Not Found + message
 
-→ Update Movie
+→ Update Movie by ID
  Method: PUT
  URL: http://localhost:3000/movies/1
  Body: 
