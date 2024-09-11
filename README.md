@@ -25,7 +25,7 @@ Before you begin, ensure you have the following installed on your machine:
 3. Make sure you have "package.json" file. If not, run `npm init` in your terminal.
 4. Install "express": `npm install express`.
 5. Make sure "nodemon" is instaled to automatically restart the server whenever it detects changes in code files. If not, run `npm i nodemon -D`.
-6. Make sure you have a dev script in "package.json" in order to run nodemon via `npm run dev`
+6. Make sure you have a dev script in "package.json" in order to run nodemon via `npm run dev`:
 
   ```bash
     "scripts": {
@@ -34,7 +34,7 @@ Before you begin, ensure you have the following installed on your machine:
     },
   ```
 
-7. Install the "pg" package which allows interaction with PostgreSQL from Node.js - `npm install pg`
+7. Install the "pg" package which allows interaction with PostgreSQL from Node.js - `npm install pg`.
 8. Set up the PostgreSQL database and tables:
 
     - Use pgAdmin4 to create new PostgreSQL database: `movies_actors_management`.   
@@ -75,7 +75,7 @@ DB_NAME=movies_actors_management
 ```
 - Replace `your_postgres_username` and `your_postgres_password` with your actual PostgreSQL username and password.
 - Ensure to require and configure ".env" at the top of the `app.js` file:
-`require('dotenv').config();`
+`require('dotenv').config();`.
 
 10. In the `app.js` file, which is in this repository, you will find the updated code with integration to PostgreSQL.
 
