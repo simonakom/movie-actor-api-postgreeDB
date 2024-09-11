@@ -22,7 +22,7 @@ Before you begin, ensure you have the following installed on your machine:
 
 1. Clone project <a href="https://github.com/simonakom/movie-actor-api">API for managing movies and actors</a> to your local machine
 2. Run project API for managing movies and actors (<a href="https://github.com/simonakom/movie-actor-api">guidelines</a>)
-3. Install the pg package which allows interaction with PostgreSQL from Node.js - npm install pg
+3. Install the pg package which allows interaction with PostgreSQL from Node.js - `npm install pg`
 4. Set up the PostgreSQL database and tables:
 
     - Use pgAdmin4 to create new PostgreSQL database: movies_actors_management   
