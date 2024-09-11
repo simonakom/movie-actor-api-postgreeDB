@@ -24,7 +24,7 @@ Before you begin, ensure you have the following installed on your machine:
 2. Navigate to the project directory.
 3. Make sure you have "package.json" file. If not, run `npm init` in your terminal.
 4. Install "express": `npm install express`.
-5. Make sure "nodemon" is instaled to automatically restart the server whenever it detects changes in code files. If not, run `npm i nodemon -D`.
+5. Make sure "nodemon" is installed to automatically restart the server whenever it detects changes in code files. If not, run `npm i nodemon -D`.
 6. Make sure you have a dev script in "package.json" in order to run nodemon via `npm run dev`:
 
   ```bash
