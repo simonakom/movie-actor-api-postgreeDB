@@ -43,7 +43,7 @@ Test Scenarios in Postman
 
 → Get Actor by ID
  Method: GET
- URL: http://localhost:3000/actors/1
+ URL: http://localhost:3000/actors/1 (Replace 1 with a valid shop ID)
  Expected Response: 200 OK + body
 
 → Get Actor by Non-Existent ID
@@ -53,7 +53,7 @@ Test Scenarios in Postman
 
 → Update Actor
  Method: PUT
- URL: http://localhost:3000/actors/1
+ URL: http://localhost:3000/actors/1  (Replace 1 with a valid shop ID)
  Body: 
         {
             "firstName": "Leonardo",
@@ -65,7 +65,7 @@ Test Scenarios in Postman
 
 → Update Actor with Future Date of Birth
  Method: PUT
- URL: http://localhost:3000/actors/1
+ URL: http://localhost:3000/actors/1  (Replace 1 with a valid shop ID)
  Body: 
         {
             "dateOfBirth": "2050-01-01"
@@ -74,7 +74,7 @@ Test Scenarios in Postman
 
 → Delete Actor
  Method: DELETE
- URL: http://localhost:3000/actors/1
+ URL: http://localhost:3000/actors/1  (Replace 1 with a valid shop ID)
  Expected Response: 204 No Content + body (empty)
 
 → Delete Non-Existent Actor
@@ -127,7 +127,7 @@ Test Scenarios in Postman
 
 → Get Movie by ID
  Method: GET
- URL: http://localhost:3000/movies/1
+ URL: http://localhost:3000/movies/1  (Replace 1 with a valid shop ID)
  Expected Response: 200 OK + body
 
 → Get Movie by Non-Existent ID
@@ -137,7 +137,7 @@ Test Scenarios in Postman
 
 → Update Movie by ID
  Method: PUT
- URL: http://localhost:3000/movies/1
+ URL: http://localhost:3000/movies/1  (Replace 1 with a valid shop ID)
  Body: 
         {
             "title": "Inception: The Beginning",
@@ -148,7 +148,7 @@ Test Scenarios in Postman
 
 → Update Movie with Non-Existent Actor ID
  Method: PUT
- URL: http://localhost:3000/movies/1
+ URL: http://localhost:3000/movies/1  (Replace 1 with a valid shop ID)
  Body: 
         {
             "title": "Inception: The Sequel",
@@ -159,7 +159,7 @@ Test Scenarios in Postman
 
 → Delete Movie
  Method: DELETE
- URL: http://localhost:3000/movies/1
+ URL: http://localhost:3000/movies/1  (Replace 1 with a valid shop ID)
  Expected Response: 204 No Content + body (empty)
 
 → Delete Non-Existent Movie
