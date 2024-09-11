@@ -22,9 +22,9 @@ Before you begin, ensure you have the following installed on your machine:
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
-3. Initialize a new Node.js project by running `npm init` in your terminal. This will create a "package.json" file.
-4. Install Express by running `npm install express`
-5. Install nodemon to automatically restart the server whenever it detects changes in code files: `npm i nodemon -D`
+3. Make sure you have "package.json" file. If not, run `npm init` in your terminal.
+4. Install "express": `npm install express`.
+5. Make sure "nodemon" is instaled to automatically restart the server whenever it detects changes in code files. If not, run `npm i nodemon -D`.
 6. Make sure you have a dev script in "package.json" in order to run nodemon via `npm run dev`
 
   ```bash
@@ -34,10 +34,10 @@ Before you begin, ensure you have the following installed on your machine:
     },
   ```
 
-7. Install the pg package which allows interaction with PostgreSQL from Node.js - `npm install pg`
+7. Install the "pg" package which allows interaction with PostgreSQL from Node.js - `npm install pg`
 8. Set up the PostgreSQL database and tables:
 
-    - Use pgAdmin4 to create new PostgreSQL database: movies_actors_management.   
+    - Use pgAdmin4 to create new PostgreSQL database: `movies_actors_management`.   
     - Create 2 tables in database: 
 
 ````sql
@@ -61,9 +61,10 @@ SELECT * FROM movies
 ````
 
 9. Configure Environment Variables:
-- Ensure you have dotenv installed to load these environment variables: `npm install dotenv`
-- Create a .env file in the root directory of the project to securely store your database connection details. 
-- Add the following content to the .env file:
+
+- Ensure you have "dotenv" installed to load these environment variables. If not, run `npm install dotenv`.
+- Create a `.env` file in the root directory of the project to securely store your database connection details. 
+- Add the following content to the `.env` file:
 
 ```env
 DB_HOST=localhost
@@ -73,11 +74,10 @@ DB_PASSWORD=your_postgres_password
 DB_NAME=movies_actors_management
 ```
 - Replace `your_postgres_username` and `your_postgres_password` with your actual PostgreSQL username and password.
-- Ensure to require and configure dotenv at the top of the `app.js` file:
+- Ensure to require and configure ".env" at the top of the `app.js` file:
 `require('dotenv').config();`
 
-- Updated app.js with PostgreSQL integration
-    - app.js already updated
+10. In the `app.js` file, which is in this repository, you will find the updated code with integration to PostgreSQL.
 
 ## Run
 
