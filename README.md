@@ -1,7 +1,7 @@
 # Movies and Actors Management API with PostgreSQL
 
 ## Welcome!
-
+ 
  This project is a Node.js and Express REST API designed to manage actors and movies. It follows a CRUD architecture and instead of storing data in memory, this project uses PostgreSQL, a relational database, for persistent data storage.
 
 ## Task
