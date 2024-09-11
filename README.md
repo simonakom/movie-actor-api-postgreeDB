@@ -1,20 +1,13 @@
-# CRUD API for movies and actors!
+# Movies and Actors Management API with PostgreSQL
 
 ## Welcome!
 
-This application is built using Express and Node.js. It provides REST CRUD API for managing movies and actors. All data is stored in memory, meaning it will be lost when the application restarts.
+This project is a Node.js and Express REST API for managing actors and movies, with data persistence using PostgreSQL. 
  
 ## Task
 
-- Create REST api with Express and Js For Movie and Actor management.
-- The API should store data in memory.
-- Actor can be involved in just a single movie.
-- Actor can have FirstName, LastName and DateOfBirth.
--  Date of birth cannot be in future.
--  Movie can have title, creationDate and a single actor associated. Actor Id has to be supplied.
-- When creating movie, if actor id is not supplied, 400 has to be returned. If Actor does not exist, 404 must be returned.
-- Create CRUD for Movies and Actors.
-- Test with postman
+- Use already developed application - <a href="https://github.com/simonakom/movie-actor-api"> API for managing movies and actors</a> with local data storage, and replace in memory storage to use PostgreSQL local database.
+- Test with Postman
 
 ## Prerequisites
 
@@ -22,31 +15,59 @@ Before you begin, ensure you have the following installed on your machine:
 
 - Node.js: [Download here](https://nodejs.org/)
 - npm (Node Package Manager): Comes with Node.js installation
+- PostgreSQL and pgAdmin4 installed locally.
+- Postman for testing API requests.
 
-## Set up
+## Set up 
 
-- Clone this repository to your local machine
-- Navigate to the project directory
-- Initialize a new Node.js project by running `npm init` in your terminal. This will create a package.json file.
-- Install Express by running `npm install express`
-- Install nodemon to automatically restarts the server whenever it detects changes source code files `npm i nodemon -D`
-- Make sure you have a `dev` script in `package.json` in order to run nodemon via `npm run dev`:
+1. Clone project <a href="https://github.com/simonakom/movie-actor-api">API for managing movies and actors</a> to your local machine
+2. Run project API for managing movies and actors (<a href="https://github.com/simonakom/movie-actor-api">guidelines</a>)
+3. Install the pg package which allows interaction with PostgreSQL from Node.js - npm install pg
+4. Set up the PostgreSQL database and tables:
 
-  ```bash
-    "scripts": {
-        "dev": "nodemon app.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-  ```
+    - Use pgAdmin4 to create new PostgreSQL database: movies_actors_management   
+    - Create 2 tables in database: 
+
+````sql
+CREATE TABLE actors (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    date_of_birth DATE
+);
+
+CREATE TABLE movies (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    creation_date DATE,
+    actor_id INT REFERENCES actors(id)
+);
+
+SELECT * FROM actors
+SELECT * FROM movies
+
+````
+
+5. Configure Environment Variables:
+- Ensure you have dotenv installed to load these environment variables: `npm install dotenv`
+- Create a .env file in the root directory of the project to securely store your database connection details. 
+- Add the following content to the .env file:
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=your_postgres_username
+DB_PASSWORD=your_postgres_password
+DB_NAME=movies_actors_management
+```
+- Replace `your_postgres_username` and `your_postgres_password` with your actual PostgreSQL username and password.
+- Ensure to require and configure dotenv at the top of the `app.js` file:
+`require('dotenv').config();`
+
+- Updated app.js with PostgreSQL integration
+    - app.js already updated
 
 ## Run
 
-- Run the API Server locally `node app.js` or `npm run dev` (nodemon).
-- You should see a message: `Server is running on http://localhost:3000`
-
-
-
-
-
-
-
+- Run the API Server locally node app.js or npm run dev (nodemon).
+- You should see a message: Server is running on http://localhost:3000
