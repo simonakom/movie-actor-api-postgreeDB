@@ -7,14 +7,14 @@ This project is a Node.js and Express REST API for managing actors and movies, w
 ## Task
 
 - Use already developed application - <a href="https://github.com/simonakom/movie-actor-api"> API for managing movies and actors</a> with local data storage, and replace in memory storage to use PostgreSQL local database.
-- Test with Postman
+- Test with Postman.
 
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your machine:
 
-- Node.js: [Download here](https://nodejs.org/)
-- npm (Node Package Manager): Comes with Node.js installation
+- Node.js: [Download here](https://nodejs.org/).
+- npm (Node Package Manager): Comes with Node.js installation.
 - PostgreSQL and pgAdmin4 installed locally.
 - Postman for testing API requests.
 
