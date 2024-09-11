@@ -83,3 +83,13 @@ DB_NAME=movies_actors_management
 
 - Run the API Server locally node app.js or npm run dev (nodemon).
 - You should see a message: Server is running on http://localhost:3000
+
+## Tests
+
+Test scenarios are available in `test.txt`, or you can run them using Postman.
+
+### Importing Postman Collection
+
+- From this repository download `movie-actor-api.postman_collection.json` file to your local machine.
+- In Postman, click on the "Import" button located at the top left and drop `movie-actor-api.postman_collection.json` file.
+- Postman will automatically add the collection, and you will see all predefined API requests.
