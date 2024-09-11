@@ -34,7 +34,7 @@ Before you begin, ensure you have the following installed on your machine:
     },
   ```
 
-7. Install the "pg" package which allows interaction with PostgreSQL from Node.js - `npm install pg`.
+7. Make sure "pg" package is installed which allows interaction with PostgreSQL from Node.js - `npm install pg`.
 8. Set up the PostgreSQL database and tables:
 
     - Use pgAdmin4 to create new PostgreSQL database: `movies_actors_management`.   
