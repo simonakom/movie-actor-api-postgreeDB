@@ -22,16 +22,22 @@ Before you begin, ensure you have the following installed on your machine:
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
+3. Initialize a new Node.js project by running `npm init` in your terminal. This will create a "package.json" file.
+4. Install Express by running `npm install express`
+5. Install nodemon to automatically restart the server whenever it detects changes in code files: `npm i nodemon -D`
+6. Make sure you have a dev script in "package.json" in order to run nodemon via `npm run dev`
 
+  ```bash
+    "scripts": {
+        "dev": "nodemon app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+  ```
 
+7. Install the pg package which allows interaction with PostgreSQL from Node.js - `npm install pg`
+8. Set up the PostgreSQL database and tables:
 
-
-1. Clone project <a href="https://github.com/simonakom/movie-actor-api">API for managing movies and actors</a> to your local machine
-2. Run project API for managing movies and actors (<a href="https://github.com/simonakom/movie-actor-api">guidelines</a>)
-3. Install the pg package which allows interaction with PostgreSQL from Node.js - `npm install pg`
-4. Set up the PostgreSQL database and tables:
-
-    - Use pgAdmin4 to create new PostgreSQL database: movies_actors_management   
+    - Use pgAdmin4 to create new PostgreSQL database: movies_actors_management.   
     - Create 2 tables in database: 
 
 ````sql
@@ -54,7 +60,7 @@ SELECT * FROM movies
 
 ````
 
-5. Configure Environment Variables:
+9. Configure Environment Variables:
 - Ensure you have dotenv installed to load these environment variables: `npm install dotenv`
 - Create a .env file in the root directory of the project to securely store your database connection details. 
 - Add the following content to the .env file:
