@@ -82,7 +82,7 @@ DB_NAME=movies_actors_management
 ## Run
 
 - Run the API Server locally node app.js or npm run dev (nodemon).
-- You should see a message: Server is running on http://localhost:3000
+- You should see a message: Server is running on http://localhost:3000.
 
 ## Tests
 
