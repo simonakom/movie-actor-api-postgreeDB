@@ -1,0 +1,163 @@
+
+Test Scenarios in Postman
+
+--------------------------- Test Cases for Actor Management -----------------------------
+
+→ Create Actor:
+ Method: POST
+ URL: http://localhost:3000/actors
+ Body: 
+        {
+            "firstName": "Tom",
+            "lastName": "Hanks",
+            "dateOfBirth": "1956-07-09"
+        }
+ Expected Response: 201 Created + body
+
+
+→ Create Actor with Future Date of Birth: 
+ Method: POST
+ URL: http://localhost:3000/actors
+ Body: 
+        {
+            "firstName": "Future",
+            "lastName": "Person",
+            "dateOfBirth": "2050-01-01"
+        }
+ Expected Response: 400 Bad Request + message
+
+→ Get All Actors
+ Method: GET
+ URL: http://localhost:3000/actors
+ Expected Response: 200 OK + body
+
+→ Get Actor by ID
+ Method: GET
+ URL: http://localhost:3000/actors/1
+ Expected Response: 200 OK + body
+
+→ Get Actor by Non-Existent ID
+ Method: GET
+ URL: http://localhost:3000/actors/999
+ Expected Response: 404 Not Found + message
+
+→ Update Actor
+ Method: PUT
+ URL: http://localhost:3000/actors/1
+ Body: 
+        {
+            "firstName": "Leonardo",
+            "lastName": "DiCaprio",
+            "dateOfBirth": "1974-11-11"
+        }
+ Expected Response: 200 OK + body
+
+
+→ Update Actor with Future Date of Birth
+ Method: PUT
+ URL: http://localhost:3000/actors/1
+ Body: 
+        {
+            "dateOfBirth": "2050-01-01"
+        }
+ Expected Response: 400 Bad Request + message
+
+→ Delete Actor
+ Method: DELETE
+ URL: http://localhost:3000/actors/1
+ Expected Response: 204 No Content + body (empty)
+
+→ Delete Non-Existent Actor
+ Method: DELETE
+ URL: http://localhost:3000/actors/999
+ Expected Response: 404 Not Found + message
+
+
+
+--------------------------- Test Cases for Movie Management -----------------------------
+
+
+→ Create Movie with Actor ID
+ Method: POST
+ URL: http://localhost:3000/movies
+ Body: 
+        {
+            "title": "Titanic",
+            "creationDate": "1997-12-19",
+            "actorId": 2
+        }
+ Expected Response: 201 Created + body
+
+
+→ Create Movie without Actor ID
+ Method: POST
+ URL: http://localhost:3000/movies
+ Body: 
+        {
+             "title": "Avatar",
+             "creationDate": "2009-12-18"
+        }
+ Expected Response: 400 Bad Request + message
+
+→ Create Movie with Non-Existent Actor ID
+ Method: POST
+ URL: http://localhost:3000/movies
+ Body: 
+        {
+            "title": "The Matrix",
+            "creationDate": "1999-03-31",
+            "actorId": 999
+        }
+ Expected Response: 404 Not Found + message
+
+→ Get All Movies
+ Method: GET
+ URL: http://localhost:3000/movies
+ Expected Response: 200 OK + body
+
+→ Get Movie by ID
+ Method: GET
+ URL: http://localhost:3000/movies/1
+ Expected Response: 200 OK + body
+
+→ Get Movie by Non-Existent ID
+ Method: GET
+ URL: http://localhost:3000/movies/999
+ Expected Response: 404 Not Found + message
+
+→ Update Movie
+ Method: PUT
+ URL: http://localhost:3000/movies/1
+ Body: 
+        {
+            "title": "Inception: The Beginning",
+            "creationDate": "2010-07-15",
+            "actorId": 1
+        }
+ Expected Response: 200 OK + body
+
+→ Update Movie with Non-Existent Actor ID
+ Method: PUT
+ URL: http://localhost:3000/movies/1
+ Body: 
+        {
+            "title": "Inception: The Sequel",
+            "creationDate": "2010-07-16",
+            "actorId": 999
+        }
+ Expected Response: 404 Not Found + message
+
+→ Delete Movie
+ Method: DELETE
+ URL: http://localhost:3000/movies/1
+ Expected Response: 204 No Content + body (empty)
+
+→ Delete Non-Existent Movie
+ Method: DELETE
+ URL: http://localhost:3000/movies/999
+ Expected Response: 404 Not Found + message
+
+
+
+
+
