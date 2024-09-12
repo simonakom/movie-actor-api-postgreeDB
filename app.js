@@ -68,7 +68,9 @@ app.post('/actors', async (req, res) => { //Defines a route for handling POST re
 //--> Get all actors
 app.get('/actors', async (req, res) => { //This route handles incoming GET requests and executes the provided callback function
     try {
+        //The result object is what the pool.query method returns. This object contains: rows: An array where each element is an individual row (record) from the database result set., Other metadata about the query execution like rowCount, fields, etc.
         const result = await pool.query('SELECT * FROM actors'); //Executes a SELECT SQL query using the pool.query method. This query retrieves all rows from the actors table. The result is a promise that resolves to the query result.
+        // console.log(result);  //console.log(result.rows); 
         res.json(result.rows); //If the query is successful, the server responds with a JSON representation of the retrieved rows. result.rows contains an array of actor objects from the database.
     } catch (err) { //If an error occurs during the query execution, the catch block handles it.
         res.status(500).json({ message: 'Error retrieving actors', error: err.message }); //The server responds with a 500 Internal Server Error status code and an error message.
