@@ -5,7 +5,7 @@ require('dotenv').config(); //Loads environment variables from .env file into pr
 //----------------------------------------2.Module Imports--------------------------------------//
 
 const express = require('express'); //imports the express module - used to build web servers and APIs quickly and easily 
-const { Pool } = require('pg'); //Imports Pool from the pg module, which is a PostgreSQL client for Node.js. It allows connecting to a PostgreSQL database using connection pooling.
+const { Pool } = require('pg'); //Named import type. Imports Pool from the pg module, which is a PostgreSQL client for Node.js. It allows connecting to a PostgreSQL database using connection pooling.
 
 //--------------------------------------3.App Initialization------------------------------------//
 
@@ -15,7 +15,7 @@ const port = 3000; //setting the port, which the app will listen on for incoming
 
 //-------------------------------------4.Middleware Setup--------------------------------------//
 
-app.use(express.json()); //adds middleware (function) to the Express application, enabling it to parse incoming requests with JSON payloads.
+app.use(express.json()); //receives data in json //adds middleware (function) to the Express application, enabling it to parse incoming requests with JSON payloads.
 //middleware is a function that processes requests before they reach the route handler. Middleware can be used for things like parsing data, logging, error handling, etc.
 //without this, the server wouldn’t be able to automatically parse and understand application/json requests.
 
