@@ -10,7 +10,7 @@
 			"name": "Create actor functionality",
 			"item": [
 				{
-					"name": "Create Actor",
+					"name": "Create actor",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -38,7 +38,46 @@
 					"response": []
 				},
 				{
-					"name": "Create Actor with Future Date of Birth:",
+					"name": "Get actor by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/actors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create actor with future date of birth",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -66,58 +105,19 @@
 					"response": []
 				},
 				{
-					"name": "Create Actor without data",
+					"name": "Create actor without first name",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"lastName\": \"Hanks\",\n    \"dateOfBirth\": \"1956-07-09\"\n}",
+							"raw": "{\n    \"lastName\": \"Deep\",\n    \"dateOfBirth\": \"1963-06-09\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Actor by ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/actors/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Actors",
-					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3000/actors",
 							"protocol": "http",
@@ -138,13 +138,13 @@
 			"name": "Retrieve actor functionality",
 			"item": [
 				{
-					"name": "Create Actor",
+					"name": "Create actor",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Tom\",\n    \"lastName\": \"Hanks\",\n    \"dateOfBirth\": \"1956-07-09\"\n}",
+							"raw": "{\n    \"firstName\": \"Timothée\",\n    \"lastName\": \"Chalamet\",\n    \"dateOfBirth\": \"1995-12-27\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -166,7 +166,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Actors",
+					"name": "Get all actors",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -185,12 +185,12 @@
 					"response": []
 				},
 				{
-					"name": "Get Actor by ID",
+					"name": "Get actor by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/1",
+							"raw": "http://localhost:3000/actors/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -198,14 +198,14 @@
 							"port": "3000",
 							"path": [
 								"actors",
-								"1"
+								"2"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Actor by Non-Existent ID",
+					"name": "Get actor by non-existent ID",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -230,13 +230,13 @@
 			"name": "Update actor functionality",
 			"item": [
 				{
-					"name": "Create Actor",
+					"name": "Create actor",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Tom\",\n    \"lastName\": \"Hanks\",\n    \"dateOfBirth\": \"1956-07-09\"\n}",
+							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"lastName\": \"Maree Stoermer Coleman\",\n    \"dateOfBirth\": \"1996-09-01\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -258,7 +258,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Actors",
+					"name": "Get all actors",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -277,13 +277,13 @@
 					"response": []
 				},
 				{
-					"name": "Update Actor",
+					"name": "Update actor",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"firstName\": \"Leonardo\",\n  \"lastName\": \"DiCaprio\",\n  \"dateOfBirth\": \"1974-11-11\"\n}",
+							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"lastName\": \"Maree Stoermer\",\n    \"dateOfBirth\": \"1996-09-01\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -291,7 +291,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors/1",
+							"raw": "http://localhost:3000/actors/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -299,19 +299,19 @@
 							"port": "3000",
 							"path": [
 								"actors",
-								"1"
+								"3"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Actor by ID Copy",
+					"name": "Get actor by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/1",
+							"raw": "http://localhost:3000/actors/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -319,20 +319,20 @@
 							"port": "3000",
 							"path": [
 								"actors",
-								"1"
+								"3"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update Actor with Future Date of Birth",
+					"name": "Update actor with future date of birth",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Leo\",\n    \"lastName\": \"DiCaprio\",\n    \"dateOfBirth\": \"2050-01-01\"\n}",
+							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"lastName\": \"Maree Stoermer\",\n    \"dateOfBirth\": \"3900-09-01\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -340,7 +340,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors/1",
+							"raw": "http://localhost:3000/actors/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -348,7 +348,7 @@
 							"port": "3000",
 							"path": [
 								"actors",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -360,13 +360,13 @@
 			"name": "Delete actor functionality",
 			"item": [
 				{
-					"name": "Create Actor",
+					"name": "Create actor",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Tom\",\n    \"lastName\": \"Hanks\",\n    \"dateOfBirth\": \"1956-07-09\"\n}",
+							"raw": "{\n    \"firstName\": \"Margot\",\n    \"lastName\": \"Robbie\",\n    \"dateOfBirth\": \"1990-07-02\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -388,7 +388,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Actors",
+					"name": "Get all actors",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -407,12 +407,12 @@
 					"response": []
 				},
 				{
-					"name": "Delete Actor",
+					"name": "Delete actor",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/2",
+							"raw": "http://localhost:3000/actors/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -420,19 +420,19 @@
 							"port": "3000",
 							"path": [
 								"actors",
-								"2"
+								"4"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Actor by ID",
+					"name": "Get actor by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/2",
+							"raw": "http://localhost:3000/actors/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -440,14 +440,14 @@
 							"port": "3000",
 							"path": [
 								"actors",
-								"2"
+								"4"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete Non-Existent Actor",
+					"name": "Delete non-existent actor",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -472,13 +472,13 @@
 			"name": "Create movie functionality",
 			"item": [
 				{
-					"name": "Create Movie with Actor ID",
+					"name": "Create movie with actor ID",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Titanic\",\n    \"creationDate\": \"1997-12-19\",\n    \"actorId\": 1\n}\n",
+							"raw": "{\n    \"title\": \"Forrest Gump\",\n    \"creationDate\": \"1994-09-23\",\n    \"actorId\": 1\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -500,13 +500,52 @@
 					"response": []
 				},
 				{
-					"name": "Create Movie without Actor ID",
+					"name": "Get movie by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create movie without actor ID",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"The Revenant\",\n    \"creationDate\": \"2015-12-25\"\n}",
+							"raw": "{\n    \"title\": \"The Revenant\",\n    \"creationDate\": \"2016-02-05\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -528,7 +567,7 @@
 					"response": []
 				},
 				{
-					"name": "Create Movie with Non-Existent Actor ID",
+					"name": "Create movie with non-existent actor ID",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -554,45 +593,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "Get All Movies",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Movie by ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/movies/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies",
-								"1"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -600,13 +600,13 @@
 			"name": "Retrieve movies functionality",
 			"item": [
 				{
-					"name": "Create Movie with Actor ID",
+					"name": "Create movie with actor ID",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Titanic\",\n    \"creationDate\": \"1997-12-19\",\n    \"actorId\": 1\n}\n",
+							"raw": "{\n    \"title\": \"A Man Called Otto\",\n    \"creationDate\": \"2022-12-28\",\n    \"actorId\": 1\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -628,7 +628,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Movies",
+					"name": "Get all movies",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -647,12 +647,12 @@
 					"response": []
 				},
 				{
-					"name": "Get Movie by ID",
+					"name": "Get movie by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/1",
+							"raw": "http://localhost:3000/movies/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -660,14 +660,14 @@
 							"port": "3000",
 							"path": [
 								"movies",
-								"1"
+								"2"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Movie by Non-Existent ID",
+					"name": "Get movie by non-existent ID",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -692,13 +692,13 @@
 			"name": "Update movies functionality",
 			"item": [
 				{
-					"name": "Create Movie with Actor ID",
+					"name": "Create movie with actor ID",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Titanic\",\n    \"creationDate\": \"1997-12-19\",\n    \"actorId\": 1\n}\n",
+							"raw": "{\n    \"title\": \"Sully\",\n    \"creationDate\": \"2016-09-02\",\n    \"actorId\": 1\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -720,7 +720,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Movies",
+					"name": "Get all movies",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -739,13 +739,13 @@
 					"response": []
 				},
 				{
-					"name": "Update Movie",
+					"name": "Update movie",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Inception: The Beginning\",\n    \"creationDate\": \"2010-07-15\",\n    \"actorId\": 1\n}",
+							"raw": "{\n    \"title\": \"Sully\",\n    \"creationDate\": \"2016-09-20\",\n    \"actorId\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -753,7 +753,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies/1",
+							"raw": "http://localhost:3000/movies/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -761,19 +761,19 @@
 							"port": "3000",
 							"path": [
 								"movies",
-								"1"
+								"3"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Movie by ID",
+					"name": "Get movie by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/1",
+							"raw": "http://localhost:3000/movies/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -781,14 +781,14 @@
 							"port": "3000",
 							"path": [
 								"movies",
-								"1"
+								"3"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update Movie with Non-Existent Actor ID",
+					"name": "Update movie with non-existent actor ID",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -822,13 +822,13 @@
 			"name": "Delete movies functionality",
 			"item": [
 				{
-					"name": "Create Movie with Actor ID",
+					"name": "Create movie with actor ID",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Titanic\",\n    \"creationDate\": \"1997-12-19\",\n    \"actorId\": 1\n}\n",
+							"raw": "{\n    \"title\": \"The Da Vinci Code\",\n    \"creationDate\": \"2006-05-19\",\n    \"actorId\": 1\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -850,7 +850,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Movies",
+					"name": "Get all movies",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -869,12 +869,12 @@
 					"response": []
 				},
 				{
-					"name": "Delete Movie",
+					"name": "Delete movie",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/2",
+							"raw": "http://localhost:3000/movies/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -882,19 +882,19 @@
 							"port": "3000",
 							"path": [
 								"movies",
-								"2"
+								"4"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Movie by ID Copy",
+					"name": "Get movie by ID",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/2",
+							"raw": "http://localhost:3000/movies/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -902,14 +902,14 @@
 							"port": "3000",
 							"path": [
 								"movies",
-								"2"
+								"4"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete Non-Existent Movie",
+					"name": "Delete non-existent movie",
 					"request": {
 						"method": "DELETE",
 						"header": [],
