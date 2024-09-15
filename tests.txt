@@ -14,18 +14,7 @@ Test Scenarios in Postman
         }
  Expected Response: 201 Created + body
 
-→ Create Actor with future date of birth: 
- Method: POST
- URL: http://localhost:3000/actors
- Body: 
-        {
-            "firstName": "Agnelina",
-            "lastName": "Jolie",
-            "dateOfBirth": "2050-01-01"
-        }
- Expected Response: 400 Bad Request + message
-
- → Create Actor without first name:
+→ Create Actor without first name:
  Method: POST
  URL: http://localhost:3000/actors
  Body: 
@@ -35,132 +24,267 @@ Test Scenarios in Postman
         }
  Expected Response: 400 Bad Request + message
 
-→ Get all Actors
+→ Create Actor without last name:
+ Method: POST
+ URL: http://localhost:3000/actors
+ Body: 
+        {
+            "firstName": "Johhny",
+            "dateOfBirth": "1963-06-09"
+        }
+ Expected Response: 400 Bad Request + message
+
+ → Create Actor without birth date:
+ Method: POST
+ URL: http://localhost:3000/actors
+ Body: 
+        {
+            "firstName": "Johhny",
+            "lastName": "Deep"
+        }
+ Expected Response: 400 Bad Request + message
+
+→ Create Actor with future date of birth: 
+ Method: POST
+ URL: http://localhost:3000/actors
+ Body: 
+        {
+            "firstName": "Johhny",
+            "lastName": "Deep",
+            "dateOfBirth": "3050-01-01"
+        }
+ Expected Response: 400 Bad Request + message
+
+→ Get all Actors:
  Method: GET
  URL: http://localhost:3000/actors
  Expected Response: 200 OK + body
 
-→ Get Actor by ID
+→ Get Actor by ID:
  Method: GET
  URL: http://localhost:3000/actors/1 (Replace 1 with a valid actor ID)
  Expected Response: 200 OK + body
 
-→ Get Actor by non-existent ID
+→ Get Actor by non-existent ID:
  Method: GET
  URL: http://localhost:3000/actors/999
  Expected Response: 404 Not Found + message
 
-→ Update Actor
+→ Update Actor:
  Method: PUT
  URL: http://localhost:3000/actors/1 (Replace 1 with a valid actor ID)
  Body: 
         {
              "firstName": "Zendaya",
-              "lastName": "Maree Stoermer",
-              "dateOfBirth": "1996-09-01"
+             "lastName": "Maree Stoermer Coleman",
+             "dateOfBirth": "1996-09-01"
         }
  Expected Response: 200 OK + body
 
-→ Update Actor with future date of birth
+→ Update Actor without first name:
+ Method: PUT
+ URL: http://localhost:3000/actors/1 (Replace 1 with a valid actor ID)
+ Body: 
+        {
+              "lastName": "Coleman",
+              "dateOfBirth": "1996-09-01"
+        }
+ Expected Response: 400 Bad Request + message
+
+→ Update Actor without last name:
  Method: PUT
  URL: http://localhost:3000/actors/1 (Replace 1 with a valid actor ID)
  Body: 
         {
               "firstName": "Zendaya",
-              "lastName": "Maree Stoermer",
+              "dateOfBirth": "1996-09-10"
+        }
+ Expected Response: 400 Bad Request + message
+
+→ Update Actor without date of birth:
+ Method: PUT
+ URL: http://localhost:3000/actors/1 (Replace 1 with a valid actor ID)
+ Body: 
+        {
+              "firstName": "Zendaya",
+              "lastName": "Stoermer"
+        }
+ Expected Response: 400 Bad Request + message
+
+→ Update Actor with future date of birth:
+ Method: PUT
+ URL: http://localhost:3000/actors/1 (Replace 1 with a valid actor ID)
+ Body: 
+        {
+              "firstName": "Zendaya",
+              "lastName": "Maree Stoermer Coleman",
               "dateOfBirth": "3900-09-01"
         }
  Expected Response: 400 Bad Request + message
 
-→ Delete Actor
+→ Update non-existent Actor:
+ Method: PUT
+ URL: http://localhost:3000/actors/9999
+ Body: 
+        {
+              "firstName": "Zendaya",
+              "lastName": "Maree Stoermer Coleman",
+              "dateOfBirth": "3900-09-01"
+        }
+ Expected Response: 404 Not Found + message
+
+→ Delete Actor:
  Method: DELETE 
  URL: http://localhost:3000/actors/1 (Replace 1 with a valid actor ID)
  Expected Response: 204 No Content + body (empty)
 
-→ Delete non-existent Actor
+→ Delete non-existent Actor:
  Method: DELETE
- URL: http://localhost:3000/actors/999
+ URL: http://localhost:3000/actors/9999
  Expected Response: 404 Not Found + message
 
 --------------------------- Test cases for movies management -----------------------------
 
-→ Create movie with Actor ID
+→ Create movie with Actor ID:
  Method: POST
  URL: http://localhost:3000/movies
  Body: 
         {
-              "title": "Forrest Gump",
-              "creationDate": "1994-09-23",
-              "actorId": 1
+              "title": "Inception",
+              "creationDate": "2010-07-16",
+              "actorId": 1 (Replace 1 with a valid actor ID)
         }
  Expected Response: 201 Created + body
 
-→ Create movie without Actor ID
+→ Create movie without a title:
  Method: POST
  URL: http://localhost:3000/movies
  Body: 
        {
-              "title": "The Revenant",
-              "creationDate": "2016-02-05"
+             "creationDate": "1997-12-19",
+             "actorId": 1 (Replace 1 with a valid actor ID)
+       }
+ Expected Response: 400 Bad Request + message
+ 
+ → Create movie without a date of creation:
+ Method: POST
+ URL: http://localhost:3000/movies
+ Body: 
+       {
+             "title": "Titanic"
+             "actorId": 1 (Replace 1 with a valid actor ID)
        }
  Expected Response: 400 Bad Request + message
 
-→ Create movie with non-existent Actor ID
+→ Create movie without Actor ID:
+ Method: POST
+ URL: http://localhost:3000/movies
+ Body: 
+       {
+             "title": "Titanic",
+             "creationDate": "1997-12-19"
+       }
+ Expected Response: 400 Bad Request + message
+
+→ Create movie with non-existent Actor ID:
  Method: POST
  URL: http://localhost:3000/movies
  Body: 
         {
-            "title": "The Matrix",
-            "creationDate": "1999-03-31",
-            "actorId": 999
+            "title": "Titanic",
+            "creationDate": "1997-12-19",
+            "actorId": 9999
         }
  Expected Response: 404 Not Found + message
 
-→ Get all movies
+→ Get all movies:
  Method: GET
  URL: http://localhost:3000/movies
  Expected Response: 200 OK + body
 
-→ Get movie by ID
+→ Get movie by ID:
  Method: GET
  URL: http://localhost:3000/movies/1 (Replace 1 with a valid movie ID)
  Expected Response: 200 OK + body
 
-→ Get movie by non-existent ID
+→ Get movie by non-existent ID:
  Method: GET
- URL: http://localhost:3000/movies/999
+ URL: http://localhost:3000/movies/9999
  Expected Response: 404 Not Found + message
 
-→ Update movie by ID
+→ Update movie by ID:
  Method: PUT
  URL: http://localhost:3000/movies/1 (Replace 1 with a valid movie ID)
  Body: 
        {
-              "title": "Sully",
-              "creationDate": "2016-09-20",
-              "actorId": 1
+              "title": "Lost in Translation",
+              "creationDate": "2003-09-12",
+              "actorId": 1 (Replace 1 with a valid actor ID)
        }
  Expected Response: 200 OK + body
 
-→ Update movie with non-existent Actor ID
+→ Update movie without a title:
  Method: PUT
  URL: http://localhost:3000/movies/1 (Replace 1 with a valid movie ID)
  Body: 
         {
-            "title": "Inception: The Sequel",
-            "creationDate": "2010-07-16",
-            "actorId": 999
+            "creationDate": "2012-05-04",
+            "actorId": 1 (Replace 1 with a valid actor ID)
+        }
+Expected Response: 400 Bad Request + message
+
+→ Update movie without a date of creation:
+ Method: PUT
+ URL: http://localhost:3000/movies/1 (Replace 1 with a valid movie ID)
+ Body: 
+        {
+            "title": "The Avengers",
+            "actorId": 1 (Replace 1 with a valid actor ID)
+        }
+Expected Response: 400 Bad Request + message
+
+→ Update movie without Actor ID:
+ Method: PUT
+ URL: http://localhost:3000/movies/1 (Replace 1 with a valid movie ID)
+ Body: 
+        {
+            "title": "The Avengers",
+            "creationDate": "2012-05-04"
+        }
+Expected Response: 400 Bad Request + message
+
+→ Update movie with non-existent Actor ID:
+ Method: PUT
+ URL: http://localhost:3000/movies/1 (Replace 1 with a valid movie ID)
+ Body: 
+        {
+            "title": "The Avengers",
+            "creationDate": "2012-05-04",
+            "actorId": 9999
         }
  Expected Response: 404 Not Found + message
 
-→ Delete movie
+→ Update non-existent movie:
+ Method: PUT
+ URL: http://localhost:3000/movies/9999
+ Body: 
+        {
+            "title": "The Avengers",
+            "creationDate": "2012-05-04",
+            "actorId": 1 (Replace 1 with a valid actor ID)
+        }
+ Expected Response: 404 Not Found + message
+
+→ Delete movie:
  Method: DELETE
  URL: http://localhost:3000/movies/1 (Replace 1 with a valid movie ID)
  Expected Response: 204 No Content + body (empty)
 
-→ Delete non-existent movie
+→ Delete non-existent movie:
  Method: DELETE
- URL: http://localhost:3000/movies/999
+ URL: http://localhost:3000/movies/9999
  Expected Response: 404 Not Found + message
+
+
 
 
