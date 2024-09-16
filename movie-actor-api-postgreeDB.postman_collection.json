@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "7ab04957-5d61-4008-b6d1-bcaf9af216e5",
-		"name": "movie-actor-api",
+		"_postman_id": "08ed52fc-604b-4488-8991-b84c0245d4eb",
+		"name": "movie-actor-api-postgreeDB",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "32368873"
 	},
@@ -24,14 +24,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -43,14 +38,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/1",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/1",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"1"
 							]
 						}
@@ -72,14 +64,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -100,14 +87,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -128,14 +110,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -156,14 +133,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -175,14 +147,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -208,14 +175,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -227,14 +189,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/2",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/2",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"2"
 							]
 						}
@@ -247,14 +206,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/9999",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/9999",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"9999"
 							]
 						}
@@ -267,14 +223,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -300,14 +251,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -328,14 +274,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors/3",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/3",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"3"
 							]
 						}
@@ -348,14 +291,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/3",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/3",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"3"
 							]
 						}
@@ -377,14 +317,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors/3",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/3",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"3"
 							]
 						}
@@ -406,14 +343,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors/3",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/3",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"3"
 							]
 						}
@@ -435,14 +369,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors/3",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/3",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"3"
 							]
 						}
@@ -464,14 +395,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors/3",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/3",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"3"
 							]
 						}
@@ -493,15 +421,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors/9999",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/9999 ",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
-								"9999"
+								"9999 "
 							]
 						}
 					},
@@ -513,14 +438,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -546,14 +466,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -565,14 +480,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/4",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/4",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"4"
 							]
 						}
@@ -585,14 +497,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/4",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/4",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"4"
 							]
 						}
@@ -605,14 +514,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors/9999",
-							"protocol": "http",
+							"raw": "{{actorUrl}}/9999",
 							"host": [
-								"localhost"
+								"{{actorUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"actors",
 								"9999"
 							]
 						}
@@ -625,14 +531,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -658,14 +559,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -678,7 +574,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Inception\",\n    \"creationDate\": \"2010-07-16\",\n    \"actorId\": 4\n}\n",
+							"raw": "{\n    \"title\": \"Inception\",\n    \"creationDate\": \"2010-07-16\",\n    \"actorId\": 5\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -686,14 +582,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -705,14 +596,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/1",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/1",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"1"
 							]
 						}
@@ -734,14 +622,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -762,14 +645,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -790,14 +668,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -818,14 +691,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -837,14 +705,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -870,14 +733,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -890,7 +748,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"The Shawshank Redemption\",\n    \"creationDate\": \"1994-09-23\",\n    \"actorId\": 5\n}\n",
+							"raw": "{\n    \"title\": \"The Shawshank Redemption\",\n    \"creationDate\": \"1994-09-23\",\n    \"actorId\": 6\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -898,14 +756,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -917,14 +770,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/2",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/2",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"2"
 							]
 						}
@@ -937,14 +787,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/9999",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/9999",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"9999"
 							]
 						}
@@ -957,14 +804,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -990,14 +832,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -1010,7 +847,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Translation\",\n    \"creationDate\": \"2003-09-12\",\n    \"actorId\": 6\n}\n",
+							"raw": "{\n    \"title\": \"Translation\",\n    \"creationDate\": \"2003-09-12\",\n    \"actorId\": 7\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1018,14 +855,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -1038,7 +870,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Lost in Translation\",\n    \"creationDate\": \"2003-09-12\",\n    \"actorId\": 6\n}",
+							"raw": "{\n    \"title\": \"Lost in Translation\",\n    \"creationDate\": \"2003-09-12\",\n    \"actorId\": 7\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1046,14 +878,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies/3",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/3",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"3"
 							]
 						}
@@ -1066,14 +895,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/3",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/3",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"3"
 							]
 						}
@@ -1087,7 +913,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"creationDate\": \"2012-05-04\",\n    \"actorId\": 6\n}",
+							"raw": "{\n    \"creationDate\": \"2012-05-04\",\n    \"actorId\": 7\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1095,14 +921,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies/3",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/3",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"3"
 							]
 						}
@@ -1116,7 +939,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"The Avengers\",\n    \"actorId\": 6\n}",
+							"raw": "{\n    \"title\": \"The Avengers\",\n    \"actorId\": 7\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1124,14 +947,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies/3",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/3",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"3"
 							]
 						}
@@ -1153,14 +973,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies/3",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/3",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"3"
 							]
 						}
@@ -1182,14 +999,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies/3",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/3",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"3"
 							]
 						}
@@ -1203,7 +1017,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"The Avengers\",\n    \"creationDate\": \"2012-05-04\",\n    \"actorId\": 6\n}",
+							"raw": "{\n    \"title\": \"The Avengers\",\n    \"creationDate\": \"2012-05-04\",\n    \"actorId\": 7\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1211,14 +1025,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies/9999",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/9999",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"9999"
 							]
 						}
@@ -1231,14 +1042,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -1264,14 +1070,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/actors",
-							"protocol": "http",
+							"raw": "{{actorUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"actors"
+								"{{actorUrl}}"
 							]
 						}
 					},
@@ -1284,7 +1085,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Training Day\",\n    \"creationDate\": \"2001-10-05\",\n    \"actorId\": 7\n}\n",
+							"raw": "{\n    \"title\": \"Training Day\",\n    \"creationDate\": \"2001-10-05\",\n    \"actorId\": 8\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1292,14 +1093,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
@@ -1311,14 +1107,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/4",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/4",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"4"
 							]
 						}
@@ -1331,14 +1124,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/4",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/4",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"4"
 							]
 						}
@@ -1351,14 +1141,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies/9999",
-							"protocol": "http",
+							"raw": "{{movieUrl}}/9999",
 							"host": [
-								"localhost"
+								"{{movieUrl}}"
 							],
-							"port": "3000",
 							"path": [
-								"movies",
 								"9999"
 							]
 						}
@@ -1371,20 +1158,49 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movies",
-							"protocol": "http",
+							"raw": "{{movieUrl}}",
 							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"movies"
+								"{{movieUrl}}"
 							]
 						}
 					},
 					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "actorUrl",
+			"value": "http://localhost:3000/actors",
+			"type": "string"
+		},
+		{
+			"key": "movieUrl",
+			"value": "http://localhost:3000/movies",
+			"type": "string"
 		}
 	]
 }

@@ -5,7 +5,7 @@ require('dotenv').config(); //Loads environment variables from .env file into pr
 //----------------------------------2.Module Imports-------------------------------------------//
 
 const express = require('express'); //Imports the express module - used to build web servers and APIs quickly and easily.
-const { Pool } = require('pg'); //Named import type. Imports Pool from the pg module, which is a PostgreSQL client for Node.js. It allows connecting to a PostgreSQL database using connection pooling.
+const { Pool } = require('pg'); //Named import type. Imports Pool object from the pg module/library, which is a PostgreSQL client for Node.js. It allows connecting to a PostgreSQL database using connection pooling.
 
 //----------------------------------3.App Initialization--------------------------------------//
 
