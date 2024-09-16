@@ -46,7 +46,7 @@ function formatDateToYYYYMMDD(date) {
 }
 
 //---------------------------------------7.Actors Routes--------------------------------------//
-// Try/Catch block - Used to handle errors during code execution. If an error occurs within the try block, the catch block catches it, preventing the entire application from crashing. This allows the application to continue running and respond appropriately to the user. Without this block, unhandled errors could cause the application to crash, affecting all users.
+//Try/Catch block - Used to handle errors during code execution. If an error occurs within the try block, the catch block catches it, preventing the entire application from crashing. This allows the application to continue running and respond appropriately to the user. Without this block, unhandled errors could cause the application to crash, affecting all users.
 //NodeJs & Express is Single-Threaded Framework - framework that operates on a single thread, meaning it processes one operation at a time in a single sequence (one after another). That means that Async/Await is needed.
 //Async/Await - Simplifies working with asynchronous code by making it look and behave like synchronous code. Async programming - when app await for something (response from db) it ca do another request at the same time. 
 
