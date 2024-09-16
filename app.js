@@ -16,7 +16,7 @@ const port = 3000; //Setting the port, which the app will listen on for incoming
 
 app.use(express.json()); //Adds middleware (function) to the Express application, enabling it to receives data in json (automatically parsing json).   
 //Middleware is a function that processes requests before they reach the route handler. Middleware can be used for things like parsing data, logging, error handling, etc.
-//Without this, the server wouldn’t be able to automatically parse and understand application/json requests. Especially incoming requests like POST
+//Without this, the server wouldn’t be able to automatically parse and understand application/json requests. Especially incoming requests like POST.
 
 //----------------------------------5.PostgreSQL Pool Initialization---------------------------//
 
@@ -39,10 +39,10 @@ const findActorById = async (id) => {
     const result = await pool.query('SELECT * FROM actors WHERE id = $1', [id]);
     return result.rows[0];
 };
-//Utility function to format dates
+//Utility function to format dates.
 function formatDateToYYYYMMDD(date) {
     const birthDate = new Date(date);
-    return birthDate.toLocaleDateString('en-CA'); // YYYY-MM-DD format
+    return birthDate.toLocaleDateString('en-CA'); // YYYY-MM-DD format.
 }
 
 //---------------------------------------7.Actors Routes--------------------------------------//
@@ -180,7 +180,7 @@ app.delete('/actors/:id', async (req, res) => { //Defines a DELETE route at /act
 
 //---------------------------------------8.Movies Routes--------------------------------------//
 
-//--> Create a new movie (actorId must be provided)
+//--> Create a new movie (actor ID must be provided)
 app.post('/movies', async (req, res) => { //Defines a POST route at /movies using Express. The async keyword indicates that the function will handle asynchronous operations and use await for managing promises.
     const { title, creationDate, actorId } = req.body; //Destructures the req.body object to extract title, creationDate, and actorId. These values are expected to be provided in the request body as JSON.
 
@@ -285,7 +285,7 @@ app.put('/movies/:id', async (req, res) => { //Defines a PUT route at /movies/:i
             return res.status(404).json({ message: 'Movie not found' }); //If no movie is found, it sends a 404 Not Found response.
         }
 
-        //Verify if the provided actorId corresponds to an existing actor
+        //Verify if the provided actorId corresponds to an existing actor.
         const actor = await findActorById(actorId); //The findActorById(actorId) function is called to check if an actor with the provided actorId exists in the database.
         if (!actor) { //If not:
             return res.status(404).json({ message: 'Actor not found' });
@@ -300,7 +300,7 @@ app.put('/movies/:id', async (req, res) => { //Defines a PUT route at /movies/:i
         const updatedMovie = updatedMovieResult.rows[0]; //Retrieves the updated movie record from the query result.
         updatedMovie.creation_date = formatDateToYYYYMMDD(updatedMovie.creation_date); //Formats the creation_date of the updated movie to YYYY-MM-DD format using a utility function.
 
-        //Respond with the updated movie’s details
+        //Respond with the updated movie’s details.
         res.json(updatedMovie); //Responds with the updated movie’s details in JSON format.
     } catch (err) { //If an error occurs, it sends a 500 Internal Server Error response.
         res.status(500).json({ message: 'Error updating movie', error: err.message });
