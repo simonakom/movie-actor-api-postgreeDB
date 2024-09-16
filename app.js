@@ -39,6 +39,7 @@ const findActorById = async (id) => {
     const result = await pool.query('SELECT * FROM actors WHERE id = $1', [id]);
     return result.rows[0];
 };
+//Utility function to format dates
 function formatDateToYYYYMMDD(date) {
     const birthDate = new Date(date);
     return birthDate.toLocaleDateString('en-CA'); // YYYY-MM-DD format
@@ -80,7 +81,7 @@ app.get('/actors', async (req, res) => { //This route handles incoming GET reque
     try {
         //The result object is what the pool.query method returns. This object contains: rows: An array where each element is an individual row (record) from the database result set., Other metadata about the query execution like rowCount, fields, etc.
         const result = await pool.query('SELECT * FROM actors'); //Executes a SELECT SQL query using the pool.query method. This query retrieves all rows from the actors table. The result is a promise that resolves to the query result.
-        // console.log(result);  //console.log(result.rows);
+        //console.log(result);  //console.log(result.rows);
         
         const actors = result.rows.map(actor => { //Map creates a new array by applying a function to each element of the original array. In this case, the function formats the date_of_birth field for each actor.
             return {
@@ -229,11 +230,11 @@ app.get('/movies', async (req, res) => { //Defines a GET route at /movies using 
         // Format the creation_date for each movie in the result.
         const movies = result.rows.map(movie => {
             return {
-                ...movie, // Spread operator to copy all properties
-                creation_date: formatDateToYYYYMMDD(movie.creation_date) // Format the creation_date field.
+                ...movie, //Spread operator to copy all properties
+                creation_date: formatDateToYYYYMMDD(movie.creation_date) //Format the creation_date field.
             };
         });
-         // Send the formatted movies data as JSON.
+         //Send the formatted movies data as JSON.
          res.json(movies);
     } catch (err) { //Catches any errors that occur.
         res.status(500).json({ message: 'Error retrieving movies', error: err.message }); //If an error occurs, it sends a 500 Internal Server Error.
@@ -249,13 +250,13 @@ app.get('/movies/:id', async (req, res) => { //Defines a GET route at /movies/:i
             return res.status(404).json({ message: 'Movie not found' }); //If result.rows.length is 0, it means no movie with the given ID was found. In this case, it sends a 404 Not Found response.
         }
 
-        // Get the movie details.
+        //Get the movie details.
         const movie = result.rows[0];
 
-        // Format the creation_date field.
+        //Format the creation_date field.
         movie.creation_date = formatDateToYYYYMMDD(movie.creation_date);
 
-        // Send the formatted movie details as JSON.
+        //Send the formatted movie details as JSON.
         res.json(movie);
     } catch (err) { //If an error occurs, it sends a 500 Internal Server Error response.
         res.status(500).json({ message: 'Error retrieving movie', error: err.message });
@@ -281,13 +282,13 @@ app.put('/movies/:id', async (req, res) => { //Defines a PUT route at /movies/:i
             return res.status(404).json({ message: 'Movie not found' }); //If no movie is found, it sends a 404 Not Found response.
         }
 
-        // Verify if the provided actorId corresponds to an existing actor
+        //Verify if the provided actorId corresponds to an existing actor
         const actor = await findActorById(actorId); //The findActorById(actorId) function is called to check if an actor with the provided actorId exists in the database.
         if (!actor) { //If not:
             return res.status(404).json({ message: 'Actor not found' });
         }
 
-         // Update the movie record
+         //Update the movie record
          const updatedMovieResult = await pool.query( //Executes an UPDATE SQL query using pool.query to update the movie record in the movies table.
             'UPDATE movies SET title = $1, creation_date = $2, actor_id = $3 WHERE id = $4 RETURNING *', //$1, $2, $3, $4: Placeholders for the parameters in the query.//The RETURNING * clause in the query ensures that the updated movie record is returned.
             [title.trim(), creationDateUTC, actorId, req.params.id]
@@ -296,9 +297,9 @@ app.put('/movies/:id', async (req, res) => { //Defines a PUT route at /movies/:i
         const updatedMovie = updatedMovieResult.rows[0]; //Retrieves the updated movie record from the query result.
         updatedMovie.creation_date = formatDateToYYYYMMDD(updatedMovie.creation_date); //Formats the creation_date of the updated movie to YYYY-MM-DD format using a utility function.
 
-         // Respond with the updated movie’s details
+        //Respond with the updated movie’s details
         res.json(updatedMovie); //Responds with the updated movie’s details in JSON format.
-    } catch (err) { //If an error occurs, it sends a 500 Internal Server Error response
+    } catch (err) { //If an error occurs, it sends a 500 Internal Server Error response.
         res.status(500).json({ message: 'Error updating movie', error: err.message });
     }
 });
@@ -319,7 +320,7 @@ app.delete('/movies/:id', async (req, res) => { //Sets up an HTTP DELETE route a
 
 //------------------------------------------9.Server-----------------------------------------//
 
-//starts the server and makes it listen for incoming HTTP requests on the port defined earlier -> 3000
+//Starts the server and makes it listen for incoming HTTP requests on the port defined earlier -> 3000.
 app.listen(port, () => {
     console.log(`Movie and Actor API listening at http://localhost:${port}`);
 });
