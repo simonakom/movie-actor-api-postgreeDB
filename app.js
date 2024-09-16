@@ -93,7 +93,7 @@ app.get('/actors', async (req, res) => { //This route handles incoming GET reque
             };
         });
 
-        res.json(actors); //json(actors) method sends the newly created array of actor objects as a JSON response.
+        res.status(200).json(actors); //json(actors) method sends the newly created array of actor objects as a JSON response.
     } catch (err) { //If an error occurs during the query execution, the catch block handles it.
         res.status(500).json({ message: 'Error retrieving actors', error: err.message }); //The server responds with a 500 Internal Server Error status code and an error message.
     }
@@ -112,7 +112,7 @@ app.get('/actors/:id', async (req, res) => { //Defines a GET route at /actors/:i
 
         actor.date_of_birth = formatDateToYYYYMMDD(actor.date_of_birth); //Formats the actor's date_of_birth field for consistency.
 
-        res.json(actor); //Sends the actor's details as a JSON response with a 200 OK status code if the actor is found.
+        res.status(200).json(actor); //Sends the actor's details as a JSON response with a 200 OK status code if the actor is found.
     } catch (err) { //Handles any errors that occur during the operation.
         res.status(500).json({ message: 'Error retrieving actor', error: err.message }); //Responds with a 500 Internal Server Error status code and includes an error message in the JSON response.
     }
@@ -154,7 +154,7 @@ app.put('/actors/:id', async (req, res) => { //Defines a PUT route at /actors/:i
         const updatedActor = result.rows[0]; //Retrieves the updated actor record from the query result.
         updatedActor.date_of_birth = formatDateToYYYYMMDD(updatedActor.date_of_birth); //Formats the date_of_birth field.
 
-        res.json(updatedActor); //Sends the updated actor's details in JSON format with a 200 OK status code.
+        res.status(200).json(updatedActor); //Sends the updated actor's details in JSON format with a 200 OK status code.
     } catch (err) { //If an error occurs, it sends a 500 Internal Server Error response.
         res.status(500).json({ message: 'Error updating actor', error: err.message });
     }
@@ -237,7 +237,7 @@ app.get('/movies', async (req, res) => { //Defines a GET route at /movies using 
             };
         });
          
-         res.json(movies); //Send the formatted movies data as JSON.
+         res.status(200).json(movies); //Send the formatted movies data as JSON.
     } catch (err) { //Catches any errors that occur.
         res.status(500).json({ message: 'Error retrieving movies', error: err.message }); //If an error occurs, it sends a 500 Internal Server Error.
     }
@@ -248,6 +248,7 @@ app.get('/movies/:id', async (req, res) => { //Defines a GET route at /movies/:i
 
     try { //Handle potential errors.
         const result = await pool.query('SELECT * FROM movies WHERE id = $1', [req.params.id]); //Executes a SELECT SQL query using pool.query to fetch the movie with the specified ID from the movies table. The query uses a parameterized query with $1 as a placeholder for the movie ID, which is replaced by req.params.id. The await keyword waits for the query to complete and returns the result.
+
         if (result.rows.length === 0) { //Checks the length of result.rows, which contains the rows returned by the query.
             return res.status(404).json({ message: 'Movie not found' }); //If result.rows.length is 0, it means no movie with the given ID was found. In this case, it sends a 404 Not Found response.
         }
@@ -258,7 +259,7 @@ app.get('/movies/:id', async (req, res) => { //Defines a GET route at /movies/:i
         //Format the creation_date field.
         movie.creation_date = formatDateToYYYYMMDD(movie.creation_date);
 
-        res.json(movie); //Send the formatted movie details as JSON.
+        res.status(200).json(movie); //Send the formatted movie details as JSON.
     } catch (err) { //If an error occurs, it sends a 500 Internal Server Error response.
         res.status(500).json({ message: 'Error retrieving movie', error: err.message });
     }
@@ -300,7 +301,7 @@ app.put('/movies/:id', async (req, res) => { //Defines a PUT route at /movies/:i
         const updatedMovie = updatedMovieResult.rows[0]; //Retrieves the updated movie record from the query result.
         updatedMovie.creation_date = formatDateToYYYYMMDD(updatedMovie.creation_date); //Formats the creation_date of the updated movie to YYYY-MM-DD format using a utility function.
 
-        res.json(updatedMovie); //Responds with the updated movie’s details in JSON format.
+        res.status(200).json(updatedMovie); //Responds with the updated movie’s details in JSON format.
     } catch (err) { //If an error occurs, it sends a 500 Internal Server Error response.
         res.status(500).json({ message: 'Error updating movie', error: err.message });
     }
