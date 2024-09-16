@@ -11,6 +11,24 @@
 			"item": [
 				{
 					"name": "Create actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make actor `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"actorId\", response.id)",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -38,12 +56,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{actorUrl}}/1",
+							"raw": "{{actorUrl}}/{{actorId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"1"
+								"{{actorId}}"
 							]
 						}
 					},
@@ -120,6 +138,18 @@
 				},
 				{
 					"name": "Create actor with future date of birth (failure)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -162,6 +192,23 @@
 			"item": [
 				{
 					"name": "Create actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make actor `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"actorId\", response.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -189,12 +236,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{actorUrl}}/2",
+							"raw": "{{actorUrl}}/{{actorId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"2"
+								"{{actorId}}"
 							]
 						}
 					},
@@ -206,12 +253,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{actorUrl}}/9999",
+							"raw": "{{actorUrl}}/{{nonExistentId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"9999"
+								"{{nonExistentId}}"
 							]
 						}
 					},
@@ -238,6 +285,23 @@
 			"item": [
 				{
 					"name": "Create actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make actor `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"actorId\", response.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -274,12 +338,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{actorUrl}}/3",
+							"raw": "{{actorUrl}}/{{actorId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"3"
+								"{{actorId}}"
 							]
 						}
 					},
@@ -291,12 +355,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{actorUrl}}/3",
+							"raw": "{{actorUrl}}/{{actorId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"3"
+								"{{actorId}}"
 							]
 						}
 					},
@@ -317,12 +381,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{actorUrl}}/3",
+							"raw": "{{actorUrl}}/{{actorId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"3"
+								"{{actorId}}"
 							]
 						}
 					},
@@ -335,7 +399,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"dateOfBirth\": \"1996-09-10\"\n}",
+							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"dateOfBirth\": \"1996-09-01\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -343,12 +407,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{actorUrl}}/3",
+							"raw": "{{actorUrl}}/{{actorId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"3"
+								"{{actorId}}"
 							]
 						}
 					},
@@ -361,7 +425,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"lastName\": \"Stoermer\"\n}",
+							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"lastName\": \"Coleman\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -369,12 +433,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{actorUrl}}/3",
+							"raw": "{{actorUrl}}/{{actorId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"3"
+								"{{actorId}}"
 							]
 						}
 					},
@@ -387,7 +451,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"lastName\": \"Maree Stoermer Coleman\",\n    \"dateOfBirth\": \"3900-09-01\"\n}",
+							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"lastName\": \"Coleman\",\n    \"dateOfBirth\": \"3900-09-01\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -395,12 +459,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{actorUrl}}/3",
+							"raw": "{{actorUrl}}/{{actorId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"3"
+								"{{actorId}}"
 							]
 						}
 					},
@@ -413,7 +477,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"lastName\": \"Maree Stoermer Coleman\",\n    \"dateOfBirth\": \"3900-09-01\"\n}",
+							"raw": "{\n    \"firstName\": \"Zendaya\",\n    \"lastName\": \"Coleman\",\n    \"dateOfBirth\": \"1996-09-01\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -421,12 +485,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{actorUrl}}/9999 ",
+							"raw": "{{actorUrl}}/{{nonExistentId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"9999 "
+								"{{nonExistentId}}"
 							]
 						}
 					},
@@ -453,6 +517,23 @@
 			"item": [
 				{
 					"name": "Create actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make actor `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"actorId\", response.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -480,12 +561,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{actorUrl}}/4",
+							"raw": "{{actorUrl}}/{{actorId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"4"
+								"{{actorId}}"
 							]
 						}
 					},
@@ -497,12 +578,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{actorUrl}}/4",
+							"raw": "{{actorUrl}}/{{actorId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"4"
+								"{{actorId}}"
 							]
 						}
 					},
@@ -514,12 +595,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{actorUrl}}/9999",
+							"raw": "{{actorUrl}}/{{nonExistentId}}",
 							"host": [
 								"{{actorUrl}}"
 							],
 							"path": [
-								"9999"
+								"{{nonExistentId}}"
 							]
 						}
 					},
@@ -546,6 +627,23 @@
 			"item": [
 				{
 					"name": "Create actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make actor `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"actorId\", response.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -569,12 +667,28 @@
 				},
 				{
 					"name": "Create movie with actor ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make movie `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"movieId\", response.id)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Inception\",\n    \"creationDate\": \"2010-07-16\",\n    \"actorId\": 5\n}\n",
+							"raw": "{\n    \"title\": \"Inception\",\n    \"creationDate\": \"2010-07-16\",\n    \"actorId\": {{actorId}}\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -596,12 +710,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{movieUrl}}/1",
+							"raw": "{{movieUrl}}/{{movieId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"1"
+								"{{movieId}}"
 							]
 						}
 					},
@@ -609,12 +723,24 @@
 				},
 				{
 					"name": "Create movie without title (failure)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"creationDate\": \"1997-12-19\",\n    \"actorId\": 1\n}\n",
+							"raw": "{\n    \"creationDate\": \"1997-12-19\",\n    \"actorId\": {{actorId}}\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -637,7 +763,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Titanic\",\n    \"actorId\": 1\n}\n",
+							"raw": "{\n    \"title\": \"Titanic\",\n    \"actorId\": {{actorId}}\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -683,7 +809,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Titanic\",\n    \"creationDate\": \"1997-12-19\",\n    \"actorId\": 9999\n}",
+							"raw": "{\n    \"title\": \"Titanic\",\n    \"creationDate\": \"1997-12-19\",\n    \"actorId\": {{nonExistentId}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -720,6 +846,23 @@
 			"item": [
 				{
 					"name": "Create actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make actor `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"actorId\", response.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -743,12 +886,28 @@
 				},
 				{
 					"name": "Create movie with actor ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make movie `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"movieId\", response.id)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"The Shawshank Redemption\",\n    \"creationDate\": \"1994-09-23\",\n    \"actorId\": 6\n}\n",
+							"raw": "{\n    \"title\": \"The Shawshank Redemption\",\n    \"creationDate\": \"1994-09-23\",\n    \"actorId\": {{actorId}}\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -770,12 +929,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{movieUrl}}/2",
+							"raw": "{{movieUrl}}/{{movieId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"2"
+								"{{movieId}}"
 							]
 						}
 					},
@@ -787,12 +946,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{movieUrl}}/9999",
+							"raw": "{{movieUrl}}/{{nonExistentId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"9999"
+								"{{nonExistentId}}"
 							]
 						}
 					},
@@ -819,6 +978,23 @@
 			"item": [
 				{
 					"name": "Create actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make actor `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"actorId\", response.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -842,12 +1018,28 @@
 				},
 				{
 					"name": "Create movie with actor ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make movie `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"movieId\", response.id)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Translation\",\n    \"creationDate\": \"2003-09-12\",\n    \"actorId\": 7\n}\n",
+							"raw": "{\n    \"title\": \"Translation\",\n    \"creationDate\": \"2003-09-12\",\n    \"actorId\": {{actorId}}\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -865,12 +1057,24 @@
 				},
 				{
 					"name": "Update movie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Lost in Translation\",\n    \"creationDate\": \"2003-09-12\",\n    \"actorId\": 7\n}",
+							"raw": "{\n    \"title\": \"Lost in Translation\",\n    \"creationDate\": \"2003-09-12\",\n    \"actorId\": {{actorId}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -878,12 +1082,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{movieUrl}}/3",
+							"raw": "{{movieUrl}}/{{movieId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"3"
+								"{{movieId}}"
 							]
 						}
 					},
@@ -895,12 +1099,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{movieUrl}}/3",
+							"raw": "{{movieUrl}}/{{movieId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"3"
+								"{{movieId}}"
 							]
 						}
 					},
@@ -913,7 +1117,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"creationDate\": \"2012-05-04\",\n    \"actorId\": 7\n}",
+							"raw": "{\n    \"creationDate\": \"2012-05-04\",\n    \"actorId\": {{actorId}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -921,12 +1125,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{movieUrl}}/3",
+							"raw": "{{movieUrl}}/{{movieId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"3"
+								"{{movieId}}"
 							]
 						}
 					},
@@ -939,7 +1143,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"The Avengers\",\n    \"actorId\": 7\n}",
+							"raw": "{\n    \"title\": \"The Avengers\",\n    \"actorId\": {{actorId}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -947,12 +1151,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{movieUrl}}/3",
+							"raw": "{{movieUrl}}/{{movieId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"3"
+								"{{movieId}}"
 							]
 						}
 					},
@@ -973,12 +1177,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{movieUrl}}/3",
+							"raw": "{{movieUrl}}/{{movieId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"3"
+								"{{movieId}}"
 							]
 						}
 					},
@@ -986,12 +1190,24 @@
 				},
 				{
 					"name": "Update movie with non-existent actor ID (failure)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"The Avengers\",\n    \"creationDate\": \"2012-05-04\",\n    \"actorId\": 9999\n}",
+							"raw": "{\n    \"title\": \"The Avengers\",\n    \"creationDate\": \"2012-05-04\",\n    \"actorId\": {{nonExistentId}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -999,12 +1215,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{movieUrl}}/3",
+							"raw": "{{movieUrl}}/{{movieId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"3"
+								"{{movieId}}"
 							]
 						}
 					},
@@ -1017,7 +1233,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"The Avengers\",\n    \"creationDate\": \"2012-05-04\",\n    \"actorId\": 7\n}",
+							"raw": "{\n    \"title\": \"The Avengers\",\n    \"creationDate\": \"2012-05-04\",\n    \"actorId\": {{actorId}}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1025,12 +1241,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{movieUrl}}/9999",
+							"raw": "{{movieUrl}}/{{nonExistentId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"9999"
+								"{{nonExistentId}}"
 							]
 						}
 					},
@@ -1057,6 +1273,23 @@
 			"item": [
 				{
 					"name": "Create actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make actor `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"actorId\", response.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -1080,12 +1313,28 @@
 				},
 				{
 					"name": "Create movie with actor ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()",
+									"// console.log (response)",
+									"",
+									"//Make movie `id` change automatically (for further use)",
+									"pm.collectionVariables.set(\"movieId\", response.id)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Training Day\",\n    \"creationDate\": \"2001-10-05\",\n    \"actorId\": 8\n}\n",
+							"raw": "{\n    \"title\": \"Training Day\",\n    \"creationDate\": \"2001-10-05\",\n    \"actorId\": {{actorId}}\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1107,12 +1356,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{movieUrl}}/4",
+							"raw": "{{movieUrl}}/{{movieId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"4"
+								"{{movieId}}"
 							]
 						}
 					},
@@ -1124,12 +1373,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{movieUrl}}/4",
+							"raw": "{{movieUrl}}/{{movieId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"4"
+								"{{movieId}}"
 							]
 						}
 					},
@@ -1141,12 +1390,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{movieUrl}}/9999",
+							"raw": "{{movieUrl}}/{{nonExistentId}}",
 							"host": [
 								"{{movieUrl}}"
 							],
 							"path": [
-								"9999"
+								"{{nonExistentId}}"
 							]
 						}
 					},
@@ -1201,6 +1450,23 @@
 			"key": "movieUrl",
 			"value": "http://localhost:3000/movies",
 			"type": "string"
+		},
+		{
+			"key": "nonExistentId",
+			"value": "99999999\n",
+			"type": "string"
+		},
+		{
+			"key": "actorId",
+			"value": "1"
+		},
+		{
+			"key": "movieId",
+			"value": "1"
+		},
+		{
+			"key": "specificId",
+			"value": ""
 		}
 	]
 }
