@@ -5,7 +5,7 @@ require('dotenv').config(); //Loads environment variables from .env file into pr
 //----------------------------------2.Module Imports-------------------------------------------//
 
 const express = require('express'); //Imports the express module - used to build web servers and APIs quickly and easily.
-const { Pool } = require('pg'); //Named import type. Imports Pool object from the pg module/library, which is a PostgreSQL client for Node.js. It allows connecting to a PostgreSQL database using connection pooling.
+const { Pool } = require('pg'); //Named exported function. { Pool } - class. This line uses destructuring assignment to extract the Pool class from the pg module. It means you are specifically importing only the Pool class from the pg module and assigning it to a constant named Pool. Another exporting method could be const pool = require('pg'); - This line imports the entire pg module and assigns it to a constant named pool. In this case, pool will be an object containing all exports from the pg module, including Pool, Client, and other properties.
 
 //----------------------------------3.App Initialization--------------------------------------//
 
@@ -14,9 +14,9 @@ const port = 3000; //Setting the port, which the app will listen on for incoming
 
 //----------------------------------4.Middleware Setup----------------------------------------//
 
-app.use(express.json()); //Receives data in json. Adds middleware (function) to the Express application, enabling it to parse incoming requests with JSON payloads.
+app.use(express.json()); //Adds middleware (function) to the Express application, enabling it to receives data in json (automatically parsing json).   
 //Middleware is a function that processes requests before they reach the route handler. Middleware can be used for things like parsing data, logging, error handling, etc.
-//Without this, the server wouldn’t be able to automatically parse and understand application/json requests.
+//Without this, the server wouldn’t be able to automatically parse and understand application/json requests. Especially incoming requests like POST
 
 //----------------------------------5.PostgreSQL Pool Initialization---------------------------//
 
@@ -46,6 +46,9 @@ function formatDateToYYYYMMDD(date) {
 }
 
 //---------------------------------------7.Actors Routes--------------------------------------//
+// Try/Catch block - Used to handle errors during code execution. If an error occurs within the try block, the catch block catches it, preventing the entire application from crashing. This allows the application to continue running and respond appropriately to the user. Without this block, unhandled errors could cause the application to crash, affecting all users.
+//NodeJs & Express is Single-Threaded Framework - framework that operates on a single thread, meaning it processes one operation at a time in a single sequence (one after another). That means that Async/Await is needed.
+//Async/Await - Simplifies working with asynchronous code by making it look and behave like synchronous code. Async programming - when app await for something (response from db) it ca do another request at the same time. 
 
 //--> Create a new actor
 app.post('/actors', async (req, res) => { //Defines a route for handling POST requests to /actors and uses an asynchronous function to handle the request.
