@@ -72,7 +72,7 @@ app.post('/actors', async (req, res) => { //Defines a route for handling POST re
           const actor = result.rows[0]; //result.rows[0] retrieves this single newly inserted row (the actor) from the array. The actor variable now holds the data of this new actor, including its id, first_name, last_name, and date_of_birth.
           actor.date_of_birth = formatDateToYYYYMMDD(actor.date_of_birth); //The date_of_birth field in the actor object is returned in a default format (e.g., YYYY-MM-DDTHH:MM:SS or another format). To ensure consistency, this line uses the formatDateToYYYYMMDD utility function to format the date_of_birth field into YYYY-MM-DD format.
 
-          res.status(201).json(actor); //json(actor) method sends the actor object back to the client as a JSON response. This allows the client to see the details of the newly created actor, including the formatted date_of_birth.
+        res.status(201).json(actor); //json(actor) method sends the actor object back to the client as a JSON response. This allows the client to see the details of the newly created actor, including the formatted date_of_birth.
     } catch (err) { //If an error occurs during the query execution, the catch block handles it.
         res.status(500).json({ message: 'Error creating actor', error: err.message }); //The server responds with a 500 Internal Server Error status code.
     }
@@ -92,6 +92,7 @@ app.get('/actors', async (req, res) => { //This route handles incoming GET reque
                 date_of_birth: formatDateToYYYYMMDD(actor.date_of_birth) //replaces the original date_of_birth property with its formatted version, which is obtained by calling the formatDateToYYYYMMDD function.
             };
         });
+
         res.json(actors); //json(actors) method sends the newly created array of actor objects as a JSON response.
     } catch (err) { //If an error occurs during the query execution, the catch block handles it.
         res.status(500).json({ message: 'Error retrieving actors', error: err.message }); //The server responds with a 500 Internal Server Error status code and an error message.
@@ -100,7 +101,6 @@ app.get('/actors', async (req, res) => { //This route handles incoming GET reque
 
 //--> Get an actor by ID
 app.get('/actors/:id', async (req, res) => { //Defines a GET route at /actors/:id using Express. The :id part of the URL is a route parameter, which allows capturing a specific actor ID from the request URL.
-
     const actorId = req.params.id; //Extracts the actor ID from the request parameters.
 
     try { //Handles potential errors during the operation.
@@ -162,7 +162,6 @@ app.put('/actors/:id', async (req, res) => { //Defines a PUT route at /actors/:i
 
 //--> Delete an actor by ID
 app.delete('/actors/:id', async (req, res) => { //Defines a DELETE route at /actors/:id using Express. The :id part of the URL is a route parameter that captures the actor's ID from the request URL.
-
     const actorId = req.params.id; //Extracts the actor ID from request parameters.
 
     try { //Handle potential errors.
@@ -237,8 +236,8 @@ app.get('/movies', async (req, res) => { //Defines a GET route at /movies using 
                 creation_date: formatDateToYYYYMMDD(movie.creation_date) //Format the creation_date field.
             };
         });
-         //Send the formatted movies data as JSON.
-         res.json(movies);
+         
+         res.json(movies); //Send the formatted movies data as JSON.
     } catch (err) { //Catches any errors that occur.
         res.status(500).json({ message: 'Error retrieving movies', error: err.message }); //If an error occurs, it sends a 500 Internal Server Error.
     }
@@ -259,8 +258,7 @@ app.get('/movies/:id', async (req, res) => { //Defines a GET route at /movies/:i
         //Format the creation_date field.
         movie.creation_date = formatDateToYYYYMMDD(movie.creation_date);
 
-        //Send the formatted movie details as JSON.
-        res.json(movie);
+        res.json(movie); //Send the formatted movie details as JSON.
     } catch (err) { //If an error occurs, it sends a 500 Internal Server Error response.
         res.status(500).json({ message: 'Error retrieving movie', error: err.message });
     }
@@ -281,12 +279,14 @@ app.put('/movies/:id', async (req, res) => { //Defines a PUT route at /movies/:i
     //Check if the movie exists.
     try { //Handle potential errors.
         const movieResult = await pool.query('SELECT * FROM movies WHERE id = $1', [req.params.id]); //Executes a SELECT SQL query using pool.query to fetch the movie with the specified ID from the movies table. The query uses a parameterized query with $1 as a placeholder for the movie ID, which is replaced by req.params.id.
+
         if (movieResult.rows.length === 0) { //Checks the length of movieResult.rows, which contains the rows returned by the query. If movieResult.rows.length is 0, it means no movie with the given ID was found.
             return res.status(404).json({ message: 'Movie not found' }); //If no movie is found, it sends a 404 Not Found response.
         }
 
         //Verify if the provided actorId corresponds to an existing actor.
         const actor = await findActorById(actorId); //The findActorById(actorId) function is called to check if an actor with the provided actorId exists in the database.
+
         if (!actor) { //If not:
             return res.status(404).json({ message: 'Actor not found' });
         }
@@ -300,7 +300,6 @@ app.put('/movies/:id', async (req, res) => { //Defines a PUT route at /movies/:i
         const updatedMovie = updatedMovieResult.rows[0]; //Retrieves the updated movie record from the query result.
         updatedMovie.creation_date = formatDateToYYYYMMDD(updatedMovie.creation_date); //Formats the creation_date of the updated movie to YYYY-MM-DD format using a utility function.
 
-        //Respond with the updated movie’s details.
         res.json(updatedMovie); //Responds with the updated movie’s details in JSON format.
     } catch (err) { //If an error occurs, it sends a 500 Internal Server Error response.
         res.status(500).json({ message: 'Error updating movie', error: err.message });
@@ -312,9 +311,11 @@ app.delete('/movies/:id', async (req, res) => { //Sets up an HTTP DELETE route a
 
     try { //Handle potential errors during the deletion process.
         const result = await pool.query('DELETE FROM movies WHERE id = $1', [req.params.id]); //Executes a SQL DELETE query using pool.query. This query attempts to delete the movie from the movies table where the id matches the one provided in the URL (req.params.id). The $1 is a placeholder for the parameter, which is the movie ID, and the await keyword waits for the query to complete.
+
         if (result.rowCount === 0) { //result.rowCount contains the number of rows deleted by the query. If no rows were deleted (i.e., result.rowCount === 0), it means no movie with the specified ID was found in the database.
             return res.status(404).json({ message: 'Movie not found' }); //If no movie is found, it sends a 404 Not Found response.
         }
+
         res.status(204).send(); //If a movie was successfully deleted (i.e., rowCount > 0), the server responds with a 204 No Content status.
     } catch (err) { //If an error occurs (e.g., a database issue), the server sends a 500 Internal Server Error response.
         res.status(500).json({ message: 'Error deleting movie', error: err.message });
