@@ -165,15 +165,27 @@ app.delete('/actors/:id', async (req, res) => { //Defines a DELETE route at /act
     const actorId = req.params.id; //Extracts the actor ID from request parameters.
 
     try { //Handle potential errors.
-        const result = await pool.query('DELETE FROM actors WHERE id = $1', [actorId]); //Executes a DELETE SQL query using pool.query. This query removes the actor with the specified ID from the actors table. The $1 placeholder is replaced by req.params.id, the ID captured from the request URL. The await keyword waits for the query to complete and returns the result.
+        // Check if the actor exists before attempting deletion
+        const result = await pool.query('SELECT * FROM actors WHERE id = $1', [actorId]); //Executes a DELETE SQL query using pool.query. This query removes the actor with the specified ID from the actors table. The $1 placeholder is replaced by req.params.id, the ID captured from the request URL. The await keyword waits for the query to complete and returns the result.
+        const actor = result.rows[0]; //Extracts the first row of the result from the query (i.e., the actor with the specified ID). If no actor is found, result.rows[0] will be undefined.
 
-        if (result.rowCount === 0) { //Checks the result.rowCount property, which indicates the number of rows affected by the DELETE query.
-            return res.status(404).json({ message: 'Actor not found' }); //If rowCount is 0, it means no rows were deleted (i.e., no actor with the given ID was found). In this case, it sends a 404 Not Found response with a JSON message indicating that the actor was not found. The return statement ensures that no further code is executed if the actor does not exist.
+        if (!actor) { // If no actor is found
+            return res.status(404).json({ message: 'Actor not found' });
+        }
+        // Check if the actor is assigned to any movie
+        const movieCheckResult = await pool.query('SELECT * FROM movies WHERE actor_id = $1', [actorId]); // Executes an SQL query to check if the actor is assigned to any movies.
+        const movies = movieCheckResult.rows; // Extracts the list of movies that have the actor assigned.
+
+        if (movies.length > 0) { // If the actor is assigned to at least one movie
+            return res.status(400).json({ message: 'Cannot delete actor because they are assigned to a movie.' });
         }
 
-        res.status(204).send(); //If the DELETE operation is successful and at least one row is deleted, it sends a 204 No Content response.
-    } catch (err) { //If an error occurs, it sends a 500 Internal Server Error.
-        res.status(500).json({ message: 'Error deleting actor', error: err.message });
+        // Proceed to delete the actor
+        await pool.query('DELETE FROM actors WHERE id = $1', [actorId]); //Executes the SQL DELETE statement to remove the actor from the actors table based on their id.
+
+        res.status(204).send(); // If deletion is successful, respond with 204 No Content.
+    } catch (err) {
+        res.status(500).json({ message: 'Error deleting actor', error: err.message }); // Handles potential errors.
     }
 });
 

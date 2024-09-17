@@ -138,6 +138,11 @@ Test Scenarios in Postman
  URL: http://localhost:3000/actors/1 (Replace 1 with a valid actor ID)
  Expected Response: 204 No Content + body (empty)
 
+ → Delete actor assigned to movie
+ Method: DELETE
+ URL: http://localhost:3000/actors/1 (Replace 1 with a valid actor ID)
+ Expected Response: 400 Bad Request + message
+
 → Delete non-existent Actor:
  Method: DELETE
  URL: http://localhost:3000/actors/9999
