@@ -93,7 +93,7 @@ Test scenarios are available in `test.txt`, or you can run them using Postman.
   "scripts": {
     "dev": "nodemon app.js",
     "test": "newman run movie-actor-api-postgreeDB.postman_collection.json",
-     "start-test": "npm run dev & sleep 3 && npm run test"
+    "start-test": "npm run dev & sleep 3 && npm run test"
   }
 ````
 
