@@ -2,7 +2,7 @@
 
 ## Welcome!
 
- This project is a Node.js and Express REST API designed to manage actors and movies. It uses PostgreSQL for persistent data storage instead of in-memory storage. This guide will walk you through setting up the project, configuring PostgreSQL, and running tests using Postman and Newman.
+ This project is a Node.js and Express REST API designed to manage actors and movies. It uses PostgreSQL for persistent data storage instead of in-memory storage. This guide will walk you through setting up the project, configuring PostgreSQL, and running rerunable and automated tests using Postman and Newman.
 
 
 ## Task
