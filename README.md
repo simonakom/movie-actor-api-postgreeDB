@@ -1,13 +1,14 @@
 # Movies and Actors Management API with PostgreSQL
 
 ## Welcome!
- 
- This project is a Node.js and Express REST API designed to manage actors and movies. It follows a CRUD architecture and instead of storing data in memory, this project uses PostgreSQL, a relational database, for persistent data storage. Also, there are automated and rerunable postman tests to test the functionality of application.
+
+ This project is a Node.js and Express REST API designed to manage actors and movies. It uses PostgreSQL for persistent data storage instead of in-memory storage. This guide will walk you through setting up the project, configuring PostgreSQL, and running tests using Postman and Newman.
+
 
 ## Task
 
 - Use already developed application - <a href="https://github.com/simonakom/movie-actor-api"> API for managing movies and actors</a> with local data storage, and replace in memory storage to use PostgreSQL local database.
-- Test with Postman.
+- Test with Postman + Newman
 
 ## Prerequisites
 
@@ -73,7 +74,7 @@ DB_NAME=movies_actors_management
 - Run the API Server locally `node app.js` or `npm run dev` (nodemon).
 - You should see a message: `Server is running on http://localhost:3000`.
 
-## Tests
+## Testing
 
 Test scenarios are available in `test.txt`, or you can run them using Postman.
 
@@ -82,3 +83,12 @@ Test scenarios are available in `test.txt`, or you can run them using Postman.
 - From this repository download `movie-actor-api-postgreeDB.postman_collection.json` file to your local machine.
 - In Postman, click on the "Import" button located at the top left and drop `movie-actor-api-postgreeDB.postman_collection.json` file.
 - Postman will automatically add the collection, and you will see all predefined API requests.
+
+### Running Tests with Newman
+
+- Install Newman: `npm install newman -D`.
+- Add a test script to package.json: `"test": "newman run movie-actor-api-postgreeDB.postman_collection.json"`
+- Run the Postman Collection:
+    - Start the API Server: Open one terminal window and run the server: -> `npm run dev`
+    - Run the Tests: Open another terminal window and execute the test script: -> `npm run test`
+
