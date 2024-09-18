@@ -86,8 +86,16 @@ Test scenarios are available in `test.txt`, or you can run them using Postman.
 
 ### Running Tests with Newman
 
-- Install Newman: `npm install newman -D`.
-- Add a test script to package.json: `"test": "newman run movie-actor-api-postgreeDB.postman_collection.json"`
+- Make sure Newman is installed and if not run: `npm install newman -D`.
+- Add a test script to package.json: 
+
+````
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "newman run movie-actor-api-postgreeDB.postman_collection.json"
+  },
+````
+
 - Run the Postman Collection:
     - Start the API Server: Open one terminal window and run the server: -> `npm run dev`
     - Run the Tests: Open another terminal window and execute the test script: -> `npm run test`
